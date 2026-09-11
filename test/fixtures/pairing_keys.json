@@ -1,0 +1,15 @@
+{
+  "browser": {
+    "d": "szu0peU3BG6lZWIht0/Dpc0YKLjj8oAxJCrPwRXJ3/w=",
+    "x": "srXpXfcgr7pmcx8lYZzO0tnwHoqBGMy0D5WTUytJcxo=",
+    "y": "aXjPTYWC8ydFNpDN3mE8ZbPq1WdGDR+h6N/MI6OjNsw=",
+    "publicKeyRaw": "BLK16V33IK+6ZnMfJWGcztLZ8B6KgRjMtA+Vk1MrSXMaaXjPTYWC8ydFNpDN3mE8ZbPq1WdGDR+h6N/MI6OjNsw="
+  },
+  "app": {
+    "d": "6YRTC+8NYcP2wc3BNDx8dFmKLKBs2Cc7taNTc7pzrhA=",
+    "x": "B/1Euk7RBASrWfWFCle1CpJ1tAIAavpBAJTkSpI382s=",
+    "y": "SXZ/jmpgdFo98mWpgKmugFjdOAH++7udKGyURAopDUg=",
+    "publicKeyRaw": "BAf9RLpO0QQEq1n1hQpXtQqSdbQCAGr6QQCU5EqSN/NrSXZ/jmpgdFo98mWpgKmugFjdOAH++7udKGyURAopDUg="
+  },
+  "_note": "Fixed, test-only P-256 key pairs. Never used outside the crypto interop tests."
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!--
+      A page that decrypts trip data loads no third-party script, ever.
+      `connect-src` is the exact set of Firebase endpoints plus the public
+      weather API. Hosting sends the same policy as a real header (see
+      firebase.json); this tag keeps `npm run dev` and `vite preview` honest.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none';
+               base-uri 'none';
+               object-src 'none';
+               frame-ancestors 'none';
+               form-action 'none';
+               script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/;
+               frame-src https://www.google.com/recaptcha/ https://trip-planner-pro-3fbd2.firebaseapp.com;
+               style-src 'self' 'unsafe-inline';
+               img-src 'self' data: blob: https:;
+               font-src 'self';
+               manifest-src 'self';
+               connect-src 'self'
+                 https://firestore.googleapis.com
+                 https://identitytoolkit.googleapis.com
+                 https://securetoken.googleapis.com
+                 https://firebaseinstallations.googleapis.com
+                 https://content-firebaseappcheck.googleapis.com
+                 https://firebaseappcheck.googleapis.com
+                 https://api.open-meteo.com"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>TripEase · פתיחת טיול במחשב</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>TripEase דורש JavaScript כדי לפענח את נתוני הטיול במחשב שלך.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

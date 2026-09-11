@@ -1,0 +1,43 @@
+{
+  "name": "tripease-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "TripEase web client — open and edit a single trip on a desktop browser after pairing by QR from the mobile app.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base=/trip-web/ && cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "typecheck": "tsc -b --pretty",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gen:vectors": "tsx scripts/generate-web-vectors.ts",
+    "pair": "tsx scripts/verify-browser-half.ts --hold"
+  },
+  "dependencies": {
+    "firebase": "^12.4.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^24.9.2",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "^9.38.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4"
+  }
+}

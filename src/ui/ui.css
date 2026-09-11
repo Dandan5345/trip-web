@@ -1,0 +1,183 @@
+/* Shared primitives: modal, skeletons, badges, empty states. */
+
+.te-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(12, 12, 22, 0.42);
+  backdrop-filter: blur(3px);
+  animation: te-fade-up 0.18s ease both;
+}
+
+.te-modal {
+  width: min(680px, 100%);
+  max-height: min(86vh, 760px);
+  overflow: auto;
+  background: var(--te-surface);
+  border-radius: var(--te-radius-lg);
+  box-shadow: 0 30px 80px rgba(12, 12, 22, 0.3);
+  animation: te-fade-up 0.22s cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+.te-modal__header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 26px 16px;
+  background: var(--te-surface);
+  border-bottom: 1px solid var(--te-border);
+}
+
+.te-modal__title {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.te-modal__subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--te-muted);
+}
+
+.te-modal__body {
+  padding: 20px 26px 24px;
+}
+
+.te-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 26px 24px;
+}
+
+.te-icon-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--te-border);
+  border-radius: 50%;
+  background: var(--te-surface);
+  color: var(--te-muted);
+  transition: color 0.14s ease, border-color 0.14s ease;
+}
+
+.te-icon-button:hover {
+  color: var(--te-foreground);
+  border-color: var(--te-muted-light);
+}
+
+.te-empty {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  padding: 34px 20px;
+  border: 1px dashed var(--te-border);
+  border-radius: var(--te-radius);
+  color: var(--te-muted);
+  text-align: center;
+}
+
+.te-empty__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--te-foreground-secondary);
+}
+
+.te-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.te-badge--locked {
+  background: color-mix(in srgb, var(--te-warning) 16%, transparent);
+  color: color-mix(in srgb, var(--te-warning) 72%, var(--te-foreground));
+}
+
+.te-badge--phone {
+  background: var(--te-accent-soft);
+  color: var(--te-accent);
+}
+
+.te-badge--paid {
+  background: color-mix(in srgb, var(--te-success) 16%, transparent);
+  color: color-mix(in srgb, var(--te-success) 68%, var(--te-foreground));
+}
+
+.te-badge--unpaid {
+  background: var(--te-surface-sunken);
+  color: var(--te-muted);
+}
+
+.te-notice {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--te-radius-sm);
+  background: var(--te-accent-soft);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.te-notice__title {
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.te-notice--warning {
+  background: color-mix(in srgb, var(--te-warning) 13%, transparent);
+}
+
+.te-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.te-field__label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--te-muted);
+}
+
+.te-field input,
+.te-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--te-border);
+  border-radius: var(--te-radius-sm);
+  background: var(--te-surface-sunken);
+  color: var(--te-foreground);
+  font: inherit;
+  font-size: 14.5px;
+}
+
+.te-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.te-field-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 620px) {
+  .te-field-row {
+    grid-template-columns: 1fr;
+  }
+}

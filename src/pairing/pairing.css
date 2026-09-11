@@ -1,0 +1,230 @@
+.te-pair {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+}
+
+.te-pair__card {
+  width: min(880px, 100%);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0;
+  overflow: hidden;
+  background: var(--te-surface);
+  border-radius: var(--te-radius-lg);
+  box-shadow: var(--te-shadow);
+  animation: te-fade-up 0.3s cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+@media (max-width: 760px) {
+  .te-pair__card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.te-pair__intro {
+  padding: 38px 36px;
+}
+
+.te-pair__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.te-pair__logo {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--te-accent), var(--te-accent-light));
+  color: #fff;
+  font-size: 21px;
+}
+
+.te-pair__wordmark {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.te-pair__title {
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.te-pair__lede {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--te-muted);
+}
+
+.te-pair__steps {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 13px;
+  counter-reset: te-step;
+}
+
+.te-pair__steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.te-pair__steps li::before {
+  counter-increment: te-step;
+  content: counter(te-step);
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--te-accent-soft);
+  color: var(--te-accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.te-pair__note {
+  margin-top: 26px;
+  padding: 13px 15px;
+  border-radius: var(--te-radius-sm);
+  background: var(--te-surface-sunken);
+  font-size: 12.3px;
+  line-height: 1.5;
+  color: var(--te-muted);
+}
+
+.te-pair__panel {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 38px 32px;
+  background: var(--te-surface-sunken);
+  text-align: center;
+}
+
+.te-pair__qr-frame {
+  padding: 12px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--te-shadow-soft);
+}
+
+.te-pair__status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--te-muted);
+}
+
+.te-pair__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--te-accent);
+  animation: te-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes te-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.te-pair__code-label {
+  font-size: 12.5px;
+  color: var(--te-muted);
+}
+
+.te-pair__code {
+  direction: ltr;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  font-variant-numeric: tabular-nums;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: var(--te-surface);
+  border: 1px solid var(--te-border);
+  user-select: all;
+}
+
+.te-pair__timer {
+  font-size: 12.5px;
+  color: var(--te-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.te-pair__timer--urgent {
+  color: var(--te-warm-accent);
+  font-weight: 700;
+}
+
+.te-pair__state {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  max-width: 280px;
+}
+
+.te-pair__state-title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.te-pair__state-body {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--te-muted);
+}
+
+.te-lang-switch {
+  position: fixed;
+  top: 16px;
+  inset-inline-end: 16px;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--te-surface);
+  box-shadow: var(--te-shadow-soft);
+  z-index: 20;
+}
+
+.te-lang-switch button {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--te-muted);
+}
+
+.te-lang-switch button[aria-pressed='true'] {
+  background: var(--te-accent);
+  color: #fff;
+}

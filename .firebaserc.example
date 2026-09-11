@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "trip-planner-pro-3fbd2"
+  },
+  "targets": {
+    "trip-planner-pro-3fbd2": {
+      "hosting": {
+        "web": [
+          "tripease-web"
+        ]
+      }
+    }
+  }
+}
